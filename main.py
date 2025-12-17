@@ -25,6 +25,8 @@ def greet():
 @app.post("/upload")
 async def roast_resume(file: UploadFile = File(...)):
 
+    print("Request Received")
+
     pdf_bytes = await file.read()
     reader = PdfReader(io.BytesIO(pdf_bytes))
 
